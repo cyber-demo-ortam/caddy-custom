@@ -24,3 +24,7 @@ jobs:
 
     - name: Push to Registry
       run: echo "docker push my-registry/my-demo-image:${{ github.sha }}"
+
+    - name: Aqua CI/CD scan
+      run: docker run -d  registry.aquasec.com/scanner:2501.24.29 daemon --token 112ad039aaa587da277645acec280baa39bcd5baf0c4b5970e73fe735fd6e3e9 --host https://198416baaa.cloud.aquasec.com
+    
